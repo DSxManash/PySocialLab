@@ -1,65 +1,37 @@
-# 🧠 PySocialLab
+# PySocialLab
 
-**PySocialLab** is a lightweight, pure Python project simulating a miniature social network with data cleaning and recommendation features — all built with **no external libraries**, designed to be run inside **Jupyter Notebooks**.
+PySocialLab is a pure Python project for cleaning, exploring, and recommending in social networks. It uses only the Python standard library and Jupyter notebooks to process JSON data describing users, friendships, and liked pages.
 
-> 🔍 Explore social connections  
-> 💡 Get friend & page recommendations  
-> 🛠 Clean messy JSON data  
-> 🐍 100% Python, zero dependencies, Jupyter-ready
+## Features
 
-## 🚀 Project Overview
+- Clean raw social data (remove duplicates, inactive users/pages)
+- Recommend pages based on common user interests
+- Recommend people via mutual friend connections
+- 100% pure Python — no external dependencies
 
-This project processes unstructured JSON data describing users, their friendships, and liked pages. It provides:
+## Notebooks
 
-- **Data Cleaning**: Removes duplicates, empties, and inactive users/pages.  
-- **Friend Recommendations**: Suggests "People You May Know" based on mutual friends.  
-- **Page Recommendations**: Suggests pages you might like based on similar interests.  
-- **Pure Python Logic**: Implemented using only Python’s standard library, ideal for learning and simplicity.
+- `data_cleaning.ipynb`: Load and clean raw data, output cleaned JSON
+- `data_visualization.ipynb`: Display users, connections, and pages from loaded data
+- `pages_yml.ipynb`: Recommend pages a user might like based on similar users' interests
+- `people_ymk.ipynb`: Recommend people ("People You May Know") via mutual friend connections
 
-## 🧩 Features
+## Getting Started
 
-- Remove users with empty names  
-- Deduplicate friend lists  
-- Filter out inactive users  
-- Deduplicate pages  
-- Recommend friends based on mutual connections  
-- Recommend pages based on shared likes
-
-## 🖥️ How to Run
-
-To run this project locally in **Jupyter Notebook**:
+Prerequisites: Python 3.7+ and Jupyter (`jupyterlab` or `notebook`).
 
 ```bash
-git clone https://github.com/DSxManash/PySocialLab.git
-cd PySocialLab
-jupyter notebook
+python3 -m venv .venv
+source .venv/bin/activate
+pip install jupyter
+jupyter lab
 ```
 
-Open the notebooks and run each cell step-by-step.  
+## Usage
 
-## 🛠 Technology Stack
+1. Run `data_cleaning.ipynb` to clean raw JSON data and output `cleaned_data2.json`.
+2. Run `data_visualization.ipynb` to view users, connections, and pages.
+3. Use `pages_yml.ipynb` to get page recommendations for a user ID.
+4. Use `people_ymk.ipynb` to get friend recommendations for a user ID.
 
-- Python 3.x (Standard Library only)  
-- Jupyter Notebook  
-- No external dependencies
-
-## 📄 Sample Data Format
-
-```json
-{
-  "users": [
-    {
-      "id": 1,
-      "name": "Amit",
-      "friends": [2, 3],
-      "liked_pages": [101]
-    }
-  ],
-  "pages": [
-    {
-      "id": 101,
-      "name": "Python Developers"
-    }
-  ]
-}
-```
+All work is done in pure Python within notebooks.
